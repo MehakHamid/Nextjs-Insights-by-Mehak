@@ -632,10 +632,10 @@ export default function QuizPage() {
                     </div>
                     <div className="mb-4">
                         <label className='text-black'>Select Topic:</label>
-                        <select onChange={(e) => setSelectedTopic(classTopics[parseInt(e.target.value)])} required className=" mt-2 p-2 border rounded-md">
+                        <select   onChange={(e) => setSelectedTopic(classTopics[parseInt(e.target.value)])} required className=" mt-2 p-2 border rounded-md">
                             <option value="">Select a topic</option>
                             {classTopics.map((topic, index) => (
-                                <option key={index} value={index}>{topic.title}</option>
+                                <option color='black' key={index} value={index}>{topic.title}</option>
                             ))}
                         </select>
                     </div>
@@ -644,8 +644,8 @@ export default function QuizPage() {
                         <div key={questionIndex} className="mb-4">
                             <p>{q.question}</p>
                             {q.options.map((option: string, optionIndex: number) => (
-                                <label key={optionIndex} className="block">
-                                    <input className='' type="radio" name={`question_${questionIndex}`} value={optionIndex} onChange={() => handleAnswerChange(questionIndex, optionIndex)} required />
+                                <label key={optionIndex} className="text-black">
+                                    <input className='text-black' type="radio" name={`question_${questionIndex}`} value={optionIndex} onChange={() => handleAnswerChange(questionIndex, optionIndex)} required />
                                     {option}
                                 </label>
                             ))}
@@ -655,7 +655,7 @@ export default function QuizPage() {
                     <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-lg">Submit</button>
                 </form>
             ) : (
-                <div className="bg-white p-8 rounded-lg shadow-md text-center">
+                <div className="bg-white text-black p-8 rounded-lg shadow-md text-center">
                     <h2 className="text-2xl font-bold mb-4">Results</h2>
                     <p>You scored: {score} out of {selectedTopic.questions.length}</p>
                     <button onClick={() => { setSubmitted(false); setUserAnswers([]); setSelectedTopic(null); }} className="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4">Retake Quiz</button>
