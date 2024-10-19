@@ -642,12 +642,12 @@ export default function QuizPage() {
 
                     {selectedTopic && selectedTopic.questions.map((q: any, questionIndex: any) => (
                         <div key={questionIndex} className="mb-4">
-                            <p>{q.question}</p>
+                            <p className='text-black bg-orange-300 p-4 m-2'>{q.question}</p>
                             {q.options.map((option: string, optionIndex: number) => (
-                                <label key={optionIndex} className="text-black">
-                                    <input className='text-black' type="radio" name={`question_${questionIndex}`} value={optionIndex} onChange={() => handleAnswerChange(questionIndex, optionIndex)} required />
+                                <div key={optionIndex} className="text-black bg-blue-300 p-4 m-2 rounded flex justify-start items-start">
+                                    <input className='text-black radioButtonSize cursor-pointer' type="radio" name={`question_${questionIndex}`} value={optionIndex} onChange={() => handleAnswerChange(questionIndex, optionIndex)} required />
                                     {option}
-                                </label>
+                                </div>
                             ))}
                         </div>
                     ))}
