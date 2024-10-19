@@ -615,23 +615,23 @@ export default function QuizPage() {
             {!submitted ? (
                 <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-md">
                     <div className="mb-4">
-                        <label className='bg-black'>Name:</label>
+                        <label className='text-black'>Name:</label>
                         <input type="text" name="name" value={userInfo.name} onChange={handleInputChange} required className="  mt-2 p-2 border rounded-md" />
                     </div>
                     <div className="mb-4">
-                        <label className='bg-black'>Email:</label>
+                        <label className='text-black'>Email:</label>
                         <input type="email" name="email" value={userInfo.email} onChange={handleInputChange} required className=" mt-2 p-2 border rounded-md" />
                     </div>
                     <div className="mb-4">
-                        <label className='bg-black'>Class Day:</label>
+                        <label className='text-black'>Class Day:</label>
                         <input type="text" name="classDay" value={userInfo.classDay} onChange={handleInputChange} required className=" mt-2 p-2 border rounded-md" />
                     </div>
                     <div className="mb-4">
-                        <label className='bg-black'>Class Time:</label>
+                        <label className='text-black'>Class Time:</label>
                         <input type="text" name="classTime" value={userInfo.classTime} onChange={handleInputChange} required className=" mt-2 p-2 border rounded-md" />
                     </div>
                     <div className="mb-4">
-                        <label className='bg-black'>Select Topic:</label>
+                        <label className='text-black'>Select Topic:</label>
                         <select onChange={(e) => setSelectedTopic(classTopics[parseInt(e.target.value)])} required className=" mt-2 p-2 border rounded-md">
                             <option value="">Select a topic</option>
                             {classTopics.map((topic, index) => (
